@@ -2,6 +2,12 @@ require 'depth_calculator'
 
 RSpec.describe 'Depth Calculator' do
   describe '.calculate_depth_increases' do
+    it 'returns 0 if depth report is blank' do
+      report = []
+      depth_increase = DepthCalculator.calculate_depth_increase(report)
+      expect(depth_increase).to eq 0
+    end
+
     it 'returns the number of times the depth increases' do
       report = [
         199,
@@ -15,8 +21,9 @@ RSpec.describe 'Depth Calculator' do
         260,
         263
       ]
+      depth_increase = DepthCalculator.calculate_depth_increase(report)
 
-      expect{ DepthCalculator.calculate_depth(report)}).to eq 7
+      expect(depth_increase).to eq 7
     end
   end
 end
