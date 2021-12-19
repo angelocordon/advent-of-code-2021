@@ -2,6 +2,10 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
 
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
