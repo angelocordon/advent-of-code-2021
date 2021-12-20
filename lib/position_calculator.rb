@@ -5,6 +5,7 @@ class PositionCalculator
     @instructions = parse_instructions(instructions)
     @horizontal_pos = 0
     @depth_pos = 0
+    @aim = 0
 
     calculate_final_positions
   end
@@ -31,13 +32,14 @@ class PositionCalculator
 
   def forward(value)
     @horizontal_pos += value
+    @depth_pos += (@aim * value)
   end
 
   def up(value)
-    @depth_pos -= value
+    @aim -= value
   end
 
   def down(value)
-    @depth_pos += value
+    @aim += value
   end
 end

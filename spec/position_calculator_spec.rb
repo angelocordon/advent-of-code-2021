@@ -16,7 +16,7 @@ RSpec.describe PositionCalculator do
     it 'outputs the current depth after instructions' do
       depth = PositionCalculator.new(directions).depth_pos
 
-      expect(depth).to eq 10
+      expect(depth).to eq 60
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe PositionCalculator do
     it 'outputs the product of the horizontal and depth positions' do
       product = PositionCalculator.new(directions).final_product
 
-      expect(product).to eq 150
+      expect(product).to eq 900
     end
   end
 end
